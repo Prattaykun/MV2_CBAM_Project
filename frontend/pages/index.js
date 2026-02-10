@@ -96,9 +96,11 @@ export default function Home() {
               <span className="text-xl font-bold tracking-tight">FireGuard<span className="text-orange-500">AI</span></span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-gray-400">
-              <span className="hover:text-white cursor-pointer transition-colors">Documentation</span>
-              <span className="hover:text-white cursor-pointer transition-colors">Model Specs</span>
-              <span className="hover:text-white cursor-pointer transition-colors">About</span>
+              <span 
+              onClick={() => window.open('https://github.com/prattaykun/MV2_CBAM_Project', '_blank')}
+              className="hover:text-white cursor-pointer transition-colors">Documentation</span>
+              {/* <span className="hover:text-white cursor-pointer transition-colors">Model Specs</span>
+              <span className="hover:text-white cursor-pointer transition-colors">About</span> */}
           </div>
       </nav>
 
