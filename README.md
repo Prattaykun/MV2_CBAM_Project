@@ -95,17 +95,15 @@ npm run dev
     - If your backend is deployed, add `NEXT_PUBLIC_API_URL` set to your backend URL.
 5.  Click **Deploy**.
 
-#### Backend (Render)
-1.  Go to [Render](https://render.com/) and create a new **Web Service**.
-2.  Connect your GitHub repo.
-3.  **Root Directory**: `backend`
-4.  **Runtime**: Python 3
-5.  **Build Command**: `pip install -r requirements.txt` (This uses `backend/requirements.txt` which is optimized for CPU/Render)
-6.  **Start Command**: `uvicorn main:app --host 0.0.0.0 --port 10000`
-7.  **Environment Variables**:
-    - Ensure your model file (`mv2_cbam_best.pth`) is accessible. Render has a 500MB slug size limit.
-    - **Option A (Git LFS)**: Commit the `.pth` file to Git using LFS.
-    - **Option B (Download)**: Add a build script to download the model from an external URL (Dropbox/S3) before starting.
+#### Backend
+### Option 1: Hugging Face Spaces (Recommended)
+I recommend deploying the backend to Hugging Face Spaces using Docker for better performance and easier setup.
+See the [Hugging Face Deployment Guide](docs/HuggingFace_Deployment.md).
+my space: [MV2 CBAM Fire Detection (Hugging Face)](https://huggingface.co/spaces/prattaykun/mv2-cbam-fire-detection/tree/main)
+my api: [MV2 CBAM Fire Detection API (Hugging Face)](https://prattaykun-mv2-cbam-fire-detection.hf.space/docs)
+### Option 2: Render/Railway
+For other platforms, use the standard `requirements.txt` or `Dockerfile`.
+
 
 ### 5. Training the Model (CRITICAL FIRST STEP)
 **You must train the model before running the application or evaluation.**
@@ -188,16 +186,7 @@ This section documents the evolution of the project and the reasoning behind key
     - Analyze Kaggle dataset structure.
     - Created `ml_core/evaluate_generalization.py` for cross-domain testing.
 
-## ☁️ Deployment
 
-### Option 1: Hugging Face Spaces (Recommended)
-We recommend deploying the backend to Hugging Face Spaces using Docker for better performance and easier setup.
-See the [Hugging Face Deployment Guide](docs/HuggingFace_Deployment.md).
-my space: https://huggingface.co/spaces/prattaykun/mv2-cbam-fire-detection/tree/main
-my api: https://prattaykun-mv2-cbam-fire-detection.hf.space/docs
-### Option 2: Render/Railway
-For other platforms, use the standard `requirements.txt` or `Dockerfile`.
-See [Render/Vercel Guide](docs/Video_Presentation_Guide.md) (Note: Update this link if you have a specific render guide).
 
 ### [2026-02-10] Full System Implementation
 - **ML Core**: Implemented MobileNetV2 + CBAM, Training, and Inference.

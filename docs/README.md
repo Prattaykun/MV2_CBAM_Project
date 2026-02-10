@@ -43,6 +43,12 @@ I implemented a Domain Adaptation strategy by merging diverse samples from the K
 -   **Retraining**: The model was retrained for 5 epochs on an NVIDIA RTX 3050.
 -   **Optimization**: Switched from CPU to GPU training, reducing epoch time from ~20 mins to ~1.5 mins.
 
+### 3.4 Hard Negative Mining (Sunset Bias Fix)
+Upon further testing, I identified a specific bias where the model misclassified sunset/reddish images as fire.
+-   **Detection**: I wrote a script `verify_misclassification.py` to test the model on 190 "No Fire" images from the Kaggle dataset.
+-   **Findings**: 16 images were misclassified (8.42% False Positive Rate), mostly containing sunsets or red foliage.
+-   **Correction**: I implemented **Hard Negative Mining** by moving these specific False Positives into the training set as "No_Fire" examples. This forces the model to learn that "Red != Fire". I also increased `ColorJitter` augmentation to reduce color sensitivity.
+
 ## 4. Results
 
 | Metric | Pre-Adaptation | Post-Adaptation |
