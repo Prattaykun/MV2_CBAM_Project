@@ -161,9 +161,42 @@ For epoch in range(Epochs):
     doc.add_paragraph('3. Grad-CAM Output: Show an image where the Heatmap highlights the fire clearly, ignoring smoke.', style='List Number')
     doc.add_paragraph('4. Web Dashboard Interface', style='List Number')
 
-    output_path = os.path.join("docs", "Comprehensive_Document.docx")
-    doc.save(output_path)
-    print(f"Comprehensive Document generated successfully at: {output_path}")
+    # 6. Local Execution Guide
+    doc.add_heading('6. Local Execution Guide', level=1)
+    doc.add_paragraph('To replicate this study or deploy the system locally, follow these steps:')
+    
+    doc.add_heading('Step 1: Environment Setup', level=2)
+    doc.add_paragraph('Ensure Python 3.8+ and Node.js are installed.')
+    p = doc.add_paragraph('1. Create Virtual Environment: python -m venv venv')
+    p = doc.add_paragraph('2. Activate Environment: .\\venv\\Scripts\\activate')
+    p = doc.add_paragraph('3. Install Dependencies: pip install -r requirements.txt')
+
+    doc.add_heading('Step 2: Training the Model', level=2)
+    doc.add_paragraph('Train the MobileNetV2-CBAM model using the provided runner script:')
+    p = doc.add_paragraph('.\\venv\\Scripts\\python train_runner.py --epochs 5 --data_dir dataset')
+    p.style = 'No Spacing'
+    font = p.runs[0].font
+    font.name = 'Courier New'
+    doc.add_paragraph('This will save the best model to ml_core/models/mv2_cbam_best.pth.')
+
+    doc.add_heading('Step 3: Running the Application', level=2)
+    doc.add_paragraph('We provide a PowerShell script to launch both Backend and Frontend:')
+    p = doc.add_paragraph('.\\run_project.ps1')
+    p.style = 'No Spacing'
+    font = p.runs[0].font
+    font.name = 'Courier New'
+    doc.add_paragraph('Alternatively, run manually:')
+    doc.add_paragraph('• Backend: uvicorn main:app --reload (in backend folder)')
+    doc.add_paragraph('• Frontend: npm run dev (in frontend folder)')
+    doc.add_paragraph('Access the dashboard at http://localhost:3000.')
+    
+    output_path = os.path.join("docs", "Comprehensive_Document_v2.docx")
+    try:
+        doc.save(output_path)
+        print(f"Comprehensive Document generated successfully at: {output_path}")
+    except PermissionError:
+         print(f"Error: Could not save to {output_path}. Please close the file.")
+
 
 if __name__ == "__main__":
     create_comprehensive_doc()
