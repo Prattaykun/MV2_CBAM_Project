@@ -46,6 +46,12 @@ This project utilizes a modern, high-performance stack for real-time UAV applica
 - Python 3.8+
 - Node.js & npm
 
+### ⚡ Quick Start (Windows)
+If you have the environment set up, you can run the entire project (Backend + Frontend) with one script:
+```powershell
+.\run_project.ps1
+```
+
 ### 1. Python Environment Setup
 
 We use a virtual environment to manage dependencies.
