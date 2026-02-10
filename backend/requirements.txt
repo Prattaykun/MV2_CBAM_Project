@@ -6,8 +6,9 @@ python-multipart
 pydantic
 # Render uses CPU by default, so we use the CPU version of PyTorch to save slug size
 --find-links https://download.pytorch.org/whl/cpu/torch_stable.html
-torch==2.5.1+cpu
-torchvision==0.20.1+cpu
+--find-links https://download.pytorch.org/whl/cpu/torch_stable.html
+torch>=2.0.0
+torchvision>=0.15.0
 numpy
 pillow
 opencv-python-headless
