@@ -84,6 +84,7 @@ export default function Home() {
       <Head>
         <title>FireGuard AI | UAV Surveillance Dashboard</title>
         <meta name="description" content="Next-Gen Aerial Fire Detection System" />
+        <link rel="icon" href="/fireguard_favicon.png" />
       </Head>
 
       {/* Navbar */}

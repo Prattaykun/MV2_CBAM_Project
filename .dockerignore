@@ -1,0 +1,29 @@
+# Ignore virtual environment
+venv/
+.venv/
+
+# Ignore Git
+.git/
+.gitignore
+
+# Ignore VSCode
+.vscode/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# IMPORTANT: Ignore the large dataset to keep Docker image small
+dataset/
+output/
+local_test_images/
+
+# Ignore documentation and submission files
+docs/
+Submission_*.zip
+*.md
+*.docx
+*.pdf
+*.pptx
+*.tmp
+~$*

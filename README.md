@@ -188,6 +188,17 @@ This section documents the evolution of the project and the reasoning behind key
     - Analyze Kaggle dataset structure.
     - Created `ml_core/evaluate_generalization.py` for cross-domain testing.
 
+## ☁️ Deployment
+
+### Option 1: Hugging Face Spaces (Recommended)
+We recommend deploying the backend to Hugging Face Spaces using Docker for better performance and easier setup.
+See the [Hugging Face Deployment Guide](docs/HuggingFace_Deployment.md).
+my space: https://huggingface.co/spaces/prattaykun/mv2-cbam-fire-detection/tree/main
+my api: https://prattaykun-mv2-cbam-fire-detection.hf.space/docs
+### Option 2: Render/Railway
+For other platforms, use the standard `requirements.txt` or `Dockerfile`.
+See [Render/Vercel Guide](docs/Video_Presentation_Guide.md) (Note: Update this link if you have a specific render guide).
+
 ### [2026-02-10] Full System Implementation
 - **ML Core**: Implemented MobileNetV2 + CBAM, Training, and Inference.
 - **Backend**: FastAPI with `/predict` and `Grad-CAM`.

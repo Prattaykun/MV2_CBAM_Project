@@ -35,7 +35,11 @@ def root():
 @app.post("/predict")
 async def predict_endpoint(file: UploadFile = File(...)):
     # Save temp file
-    temp_filename = f"temp_{file.filename}"
+    # Use system temp directory to avoid permission issues
+    import tempfile
+    temp_dir = tempfile.gettempdir()
+    temp_filename = os.path.join(temp_dir, f"temp_{file.filename}")
+    
     try:
         with open(temp_filename, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
