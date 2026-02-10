@@ -4,6 +4,11 @@ venv/
 __pycache__/
 *.pyc
 ml_core/__pycache__
+
+# Temporary files (Office/PowerPoint)
+~$*
+*.tmp
+
 # Data
 dataset/
 # We exclude the entire dataset as it's large. 
