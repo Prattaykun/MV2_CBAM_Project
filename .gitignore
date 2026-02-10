@@ -1,0 +1,24 @@
+
+# Python
+venv/
+__pycache__/
+*.pyc
+ml_core/__pycache__
+# Data
+dataset/
+# We exclude the entire dataset as it's large. 
+# Instructions are in README to re-download/merge.
+
+# Project specific
+ml_core/models/mv2_cbam_base.pth
+# We keep mv2_cbam_best.pth for deployment if it's <100MB, otherwise use git-lfs
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.env
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/

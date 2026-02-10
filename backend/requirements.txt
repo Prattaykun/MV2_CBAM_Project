@@ -1,0 +1,11 @@
+
+# Backend Deployment Requirements (Render)
+fastapi
+uvicorn
+python-multipart
+pydantic
+# Render uses CPU by default, so we use the CPU version of PyTorch to save slug size
+torch --index-url https://download.pytorch.org/whl/cpu
+torchvision --index-url https://download.pytorch.org/whl/cpu
+numpy
+pillow
