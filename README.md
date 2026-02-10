@@ -266,12 +266,4 @@ The next step to solve the "Smoke/Complex Background" issue is to collect and te
 4.  **Retrain (Optional)**:
     To improve the model, you can merge this new folder into `dataset/Training` and run `train_runner.py` again.
 
-## �️ Project Cleanup
-To free up disk space (especially if you installed the ~3GB GPU version of PyTorch):
-1.  **Delete the `venv` folder**: This removes all installed Python packages.
-    ```powershell
-    Remove-Item -Recurse -Force venv
-    ```
-2.  **Delete Models & Data**: Optional, remove `ml_core/models` or `dataset` if no longer needed.
 
-## �📝 Development Log
