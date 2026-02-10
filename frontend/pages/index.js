@@ -27,7 +27,15 @@ export default function Home() {
     formData.append('file', file);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/predict';
+      let apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/predict';
+      
+      // Smart check: If the user provided a root URL (e.g. onrender.com) without /predict, add it.
+      // We check if it DOES NOT end with '/predict' and is not just a root slash.
+      if (!apiUrl.endsWith('/predict')) {
+          // Remove trailing slash if present then append /predict
+          apiUrl = apiUrl.replace(/\/$/, '') + '/predict';
+      }
+
       const res = await fetch(apiUrl, {
         method: 'POST',
         body: formData,

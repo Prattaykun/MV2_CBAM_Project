@@ -1,2 +1,0 @@
-Soft Computing (2025) - A lightweight CNN model for UAV-based image classification
-DOI: 10.1007/s00500-025-10512-3
