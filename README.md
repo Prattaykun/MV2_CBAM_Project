@@ -109,7 +109,7 @@ The training process uses your specific dataset to teach the MobileNetV2 + CBAM 
 1. Open your terminal in the project root (`d:\projects\MV2_CBAM_Project`).
 2. Run the following command:
    ```powershell
-   
+   .\venv\Scripts\python train_runner.py --epochs 5 --data_dir dataset
    ```
 3. **What happens next?**
    - The script initializes the model and data loaders.
