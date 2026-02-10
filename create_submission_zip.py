@@ -43,7 +43,7 @@ def create_zip(output_filename):
                     dirs[:] = [d for d in dirs if d not in exclude_patterns]
                     
                     for file in files:
-                        if file in exclude_patterns or file.endswith('.pyc'):
+                        if file in exclude_patterns or file.endswith('.pyc') or file.startswith('~$'):
                             continue
                             
                         # Double check logical exclusion

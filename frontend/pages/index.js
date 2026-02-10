@@ -27,7 +27,8 @@ export default function Home() {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:8000/predict', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/predict';
+      const res = await fetch(apiUrl, {
         method: 'POST',
         body: formData,
       });
