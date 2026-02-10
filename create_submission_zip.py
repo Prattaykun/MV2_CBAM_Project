@@ -27,6 +27,7 @@ def create_zip(output_filename):
         'venv',
         '.git',
         '.vscode',
+        'generate_case_study.py',
         'mv2_cbam_base.pth', # Exclude backup model
         # 'mv2_cbam_best.pth' # Keep best model if small enough, but usually better to exclude for email submission
     ]
