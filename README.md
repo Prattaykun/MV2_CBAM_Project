@@ -107,7 +107,7 @@ For other platforms, use the standard `requirements.txt` or `Dockerfile`.
 
 ### 5. Training the Model (CRITICAL FIRST STEP)
 **You must train the model before running the application or evaluation.**
-for dataset you can download [My Dataset](www.kaggle.com/datasets/prattayroychowdhury/forest-fire-dataset)
+for dataset you can download [My Dataset](https://www.kaggle.com/datasets/prattayroychowdhury/forest-fire)
 
 The training process uses your specific dataset to teach the MobileNetV2 + CBAM network how to distinguish fire from non-fire.
 
