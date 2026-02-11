@@ -165,6 +165,14 @@ This section documents the evolution of the project and the reasoning behind key
     - **Outcome**: Validation Accuracy rose to **89.4%**.
     - **Verification**: Re-ran Kaggle Evaluation -> **95.8% Accuracy**, solving the domain shift issue.
 
+### [2026-02-10] Dataset Expansion (Sunset Bias Fix)
+- **Action**: Addressed false positives on sunset/red foliage images.
+- **Details**:
+    - **Issue**: Initial model had ~8.4% false positive rate on "sunset" images.
+    - **Fix 1**: **Hard Negative Mining** (Moved misclassified images to training).
+    - **Fix 2**: **Massive Dataset Expansion** (Merged `FOREST_FIRE_DATASET` - 43k new images).
+    - **Result**: Retraining final model for 10 epochs on the expanded dataset (>50k images total) to ensure varying environmental conditions are learned.
+
 ### [2026-02-10] Generalization & Evaluation
 - **Action**: Performed Cross-Domain Evaluation.
 - **Details**:
