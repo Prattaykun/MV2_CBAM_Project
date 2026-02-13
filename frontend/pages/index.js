@@ -205,7 +205,12 @@ export default function Home() {
                     <div className="absolute top-0 left-0 w-full h-full border-4 border-slate-700 rounded-full"></div>
                     <div className="absolute top-0 left-0 w-full h-full border-4 border-t-orange-500 rounded-full animate-spin"></div>
                 </div>
-                <p className="mt-8 text-xl font-medium text-slate-300 animate-pulse">Running Neural Inference...</p>
+                <div className="mt-8 h-8 overflow-hidden relative w-full text-center">
+                    <div className="animate-slide-text flex flex-col items-center">
+                        <p className="text-xl font-medium text-slate-300 animate-pulse h-8 flex items-center justify-center whitespace-nowrap">Running Neural Inference...</p>
+                        <p className="text-xl font-medium text-slate-300 animate-pulse h-8 flex items-center justify-center whitespace-nowrap">Waiting for Hugging Face model to wake up...</p>
+                    </div>
+                </div>
                 <div className="flex gap-2 mt-2">
                     <span className="w-2 h-2 rounded-full bg-slate-600 animate-bounce delay-75"></span>
                     <span className="w-2 h-2 rounded-full bg-slate-600 animate-bounce delay-150"></span>
@@ -287,6 +292,14 @@ export default function Home() {
         }
         .animate-fade-in-up {
             animation: fade-in-up 0.5s ease-out forwards;
+        }
+        @keyframes slide-text {
+            0%, 45% { transform: translateY(0); }
+            50%, 95% { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+        .animate-slide-text {
+            animation: slide-text 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
       `}</style>
       
